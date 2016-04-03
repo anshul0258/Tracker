@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Tracker.Business.Entities;
 using Core.Common.Contracts;
 
-namespace Tracker.Data.Contracts.Repository_Interfaces
+namespace Tracker.Data.Contracts
 {
     public interface IPersonRepository : IDataRepository<Person>
     {

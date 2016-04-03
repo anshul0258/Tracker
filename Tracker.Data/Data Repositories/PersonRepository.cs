@@ -5,10 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using Core.Common.Data;
 using Tracker.Business.Entities;
-using Tracker.Data.Contracts.Repository_Interfaces;
+using Tracker.Data.Contracts;
+using System.ComponentModel.Composition;
 
 namespace Tracker.Data.Data_Repositories
 {
+    [Export(typeof(IPersonRepository))]
+    [PartCreationPolicy(CreationPolicy.NonShared)]
     public class PersonRepository : DataRepositoryBase<Person>, IPersonRepository
     {
         protected override Person AddEntity(TrackerContext entityContext, Person entity)
